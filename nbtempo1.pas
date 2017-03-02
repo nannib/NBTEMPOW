@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ShellCtrls, ExtCtrls, ComCtrls, StdCtrls, EditBtn,Windows;
+  Dialogs, ShellCtrls, ExtCtrls, ComCtrls, StdCtrls, EditBtn, Windows;
 
 type
 
@@ -16,6 +16,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
     Edit1: TEdit;
@@ -39,9 +40,12 @@ type
     StaticText1: TStaticText;
     StaticText2: TStaticText;
     StaticText3: TStaticText;
+    StaticText4: TStaticText;
+    StaticText5: TStaticText;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormStartDock(Sender: TObject; var DragObject: TDragDockObject);
@@ -54,6 +58,7 @@ type
     procedure ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
     procedure ShellTreeView1Click(Sender: TObject);
     procedure ShellTreeView2Change(Sender: TObject; Node: TTreeNode);
+    procedure StaticText4Click(Sender: TObject);
     procedure TimeEdit1Change(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -65,7 +70,8 @@ type
 var
   Form1: TForm1;
   selectedfile: string;
-  z,d1,d2,t1,t2: string;
+  z,d1,d2,d,macd,dcsv,ctime: string;
+  ActualTime: TDateTime;
 
 
 implementation
@@ -143,8 +149,27 @@ begin
      Edit3.text:='';
      Progressbar1.Visible:=True;
      Label2.Visible:=True;
-     d1:=FormatDateTime('yyyy-mm-dd', DateTimePicker1.Date);
-     d2:=FormatDateTime('yyyy-mm-dd', DateTimePicker2.Date);
+     actualtime:= Now;
+     ctime:=FormatDateTime('yyyy-mm-dd_hh_nn_ss', actualtime);
+     if  (DateTimePicker1.DateIsNull) or (DateTimePicker2.DateIsNull) then
+     begin
+       DateTimePicker1.Date:=1.7E308;
+       DateTimePicker2.Date:=1.7E308;
+     end;
+     if (DateTimePicker1.DateIsNull) and (DateTimePicker2.DateIsNull) then
+     begin
+       d:='';
+       macd:='';
+       dcsv:='All';
+     end
+     else
+     begin
+       d1:=FormatDateTime('yyyy-mm-dd', DateTimePicker1.Date);
+       d2:=FormatDateTime('yyyy-mm-dd', DateTimePicker2.Date);
+       d:=d1+'_'+d2;
+       macd:='-d '+d1+'..'+d2;
+       dcsv:=d;
+     end;
      if  (LabeledEdit1.Text='') then
      begin
        z:=' -s '+LabeledEdit2.Text+' ';
@@ -154,21 +179,13 @@ begin
        z:=' -z '+LabeledEdit1.Text+' -s '+LabeledEdit2.Text+' ';
      end;
      //ProgressBar1.StepIt;
-       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe -d '+d1+'..'+d2+' >'+Edit2.Text+'timeline'+d1+'_'+d2+'.csv');
+       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe '+macd+' -b >'+Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv');
 
-  //        0=hide / 1=SW_SHOWNORMAL / 3=max / 7=min)
-   // return values 0..32 are errors, over 32 success.
- //    if ShellExecuteEx(0,nil,PChar('cmd'),PChar('/c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe -d '+d1+'..'+d2+' >'+Edit2.Text+'timeline'+d1+'_'+d2+'.csv'),nil,0) > 32 then
- //    begin
+
      Progressbar1.Visible:=False;
      Label2.Visible:=False;
-     Edit3.Text:=Edit2.Text+'timeline'+d1+'_'+d2+'.csv';
- //    end
- //    else
- //    begin
- //    Edit2.Text:='THERE IS AN ERROR!';
- //    end;
-end;
+     Edit3.Text:=Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv';
+ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
@@ -177,7 +194,13 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  ShellExecute(handle,'open',PChar(Edit2.Text+'timeline'+d1+'_'+d2+'.csv'),'','',1)
+  ShellExecute(handle,'open',PChar(Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv'),'','',1)
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  DateTimePicker1.Date:=1.7E308;
+  DateTimePicker2.Date:=1.7E308;
 end;
 
 procedure TForm1.ShellListView1Click(Sender: TObject);
@@ -198,6 +221,11 @@ end;
 procedure TForm1.ShellTreeView2Change(Sender: TObject; Node: TTreeNode);
 begin
      Edit2.Text := ShellTreeView2.Path;
+end;
+
+procedure TForm1.StaticText4Click(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.TimeEdit1Change(Sender: TObject);

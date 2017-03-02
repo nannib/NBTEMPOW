@@ -1,15 +1,15 @@
 object Form1: TForm1
-  Left = 407
-  Height = 613
-  Top = 101
+  Left = 165
+  Height = 610
+  Top = 124
   Width = 1016
   HorzScrollBar.Page = 1006
   HorzScrollBar.Range = 1006
   VertScrollBar.Page = 554
   VertScrollBar.Range = 554
   Align = alTop
-  Caption = 'NBTempoW - V.1.0 by Nanni Bassetti'
-  ClientHeight = 613
+  Caption = 'NBTempoW - V.1.1 by Nanni Bassetti'
+  ClientHeight = 610
   ClientWidth = 1016
   Color = clSilver
   Icon.Data = {
@@ -4501,47 +4501,49 @@ object Form1: TForm1
     ShellTreeView = ShellTreeView1
   end
   object DateTimePicker1: TDateTimePicker
-    Left = 680
+    Left = 682
     Height = 23
-    Top = 128
-    Width = 83
+    Top = 154
+    Width = 107
     ArrowShape = asModernLarger
     CenturyFrom = 1941
     MaxDate = 2958465
     MinDate = -53780
+    AutoSize = False
     TabOrder = 2
     TrailingSeparator = False
-    TextForNullDate = 'NULL'
+    TextForNullDate = 'Choose a date'
     LeadingZeros = True
     Kind = dtkDate
     TimeFormat = tf24
     TimeDisplay = tdHMS
     DateMode = dmComboBox
-    Date = 42795
-    Time = 0
+    Date = 1.7E308
+    Time = 1.7E308
     UseDefaultSeparators = True
     HideDateTimeParts = []
     MonthNames = 'Long'
   end
   object DateTimePicker2: TDateTimePicker
-    Left = 848
+    Left = 888
     Height = 23
-    Top = 128
-    Width = 83
+    Top = 152
+    Width = 104
     ArrowShape = asModernLarger
     CenturyFrom = 1941
     MaxDate = 2958465
-    MinDate = 2
+    MinDate = -53780
+    AutoSize = False
     TabOrder = 3
     TrailingSeparator = False
-    TextForNullDate = 'NULL'
+    TextForNullDate = 'Choose a date'
     LeadingZeros = True
     Kind = dtkDate
     TimeFormat = tf24
     TimeDisplay = tdHMS
     DateMode = dmComboBox
-    Date = 42795
-    Time = 0.99998842592322
+    Date = 1.7E308
+    Time = 1.7E308
     UseDefaultSeparators = True
     HideDateTimeParts = []
     MonthNames = 'Long'
@@ -4574,7 +4576,7 @@ object Form1: TForm1
   object LabeledEdit1: TLabeledEdit
     Left = 680
     Height = 23
-    Top = 232
+    Top = 272
     Width = 209
     EditLabel.AnchorSideLeft.Control = LabeledEdit1
     EditLabel.AnchorSideRight.Control = LabeledEdit1
@@ -4582,7 +4584,7 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = LabeledEdit1
     EditLabel.Left = 680
     EditLabel.Height = 15
-    EditLabel.Top = 214
+    EditLabel.Top = 254
     EditLabel.Width = 209
     EditLabel.Caption = 'TIME ZONE (leave empty for local time)'
     EditLabel.Color = clYellow
@@ -4593,7 +4595,7 @@ object Form1: TForm1
   object LabeledEdit2: TLabeledEdit
     Left = 682
     Height = 23
-    Top = 288
+    Top = 335
     Width = 114
     EditLabel.AnchorSideLeft.Control = LabeledEdit2
     EditLabel.AnchorSideRight.Control = LabeledEdit2
@@ -4601,7 +4603,7 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = LabeledEdit2
     EditLabel.Left = 682
     EditLabel.Height = 15
-    EditLabel.Top = 270
+    EditLabel.Top = 317
     EditLabel.Width = 114
     EditLabel.Caption = 'TIME SKEW'
     EditLabel.Color = clYellow
@@ -4620,7 +4622,7 @@ object Form1: TForm1
   end
   object Splitter2: TSplitter
     Left = 0
-    Height = 613
+    Height = 610
     Top = 0
     Width = 4
   end
@@ -4724,9 +4726,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label5: TLabel
-    Left = 680
+    Left = 682
     Height = 15
-    Top = 104
+    Top = 136
     Width = 28
     Caption = 'From'
     Color = clYellow
@@ -4734,9 +4736,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label6: TLabel
-    Left = 848
+    Left = 888
     Height = 15
-    Top = 104
+    Top = 136
     Width = 14
     Caption = 'To'
     Color = clYellow
@@ -4772,30 +4774,64 @@ object Form1: TForm1
   end
   object Splitter1: TSplitter
     Left = 4
-    Height = 613
+    Height = 610
     Top = 0
     Width = 4
   end
   object StaticText2: TStaticText
-    Left = 904
+    Left = 896
     Height = 41
-    Top = 214
+    Top = 254
     Width = 88
     Caption = 'e.g.: GMT+2, UTC, CET etc.'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 17
+    TabOrder = 18
     Transparent = False
   end
   object StaticText3: TStaticText
-    Left = 808
+    Left = 801
     Height = 41
-    Top = 270
+    Top = 320
     Width = 88
     Caption = 'e.g.: in seconds, e.g.: 10,-5, etc.'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 18
+    TabOrder = 19
+    Transparent = False
+  end
+  object Button4: TButton
+    Left = 800
+    Height = 24
+    Top = 192
+    Width = 84
+    Caption = 'ALL DATES'
+    OnClick = Button4Click
+    TabOrder = 20
+  end
+  object StaticText4: TStaticText
+    Left = 814
+    Height = 17
+    Top = 160
+    Width = 48
+    Alignment = taCenter
+    Caption = 'OR'
+    Color = clYellow
+    OnClick = StaticText4Click
+    ParentColor = False
+    TabOrder = 17
+    Transparent = False
+  end
+  object StaticText5: TStaticText
+    Left = 682
+    Height = 25
+    Top = 104
+    Width = 312
+    Alignment = taCenter
+    Caption = 'By default, the range is set to ALL DATES'
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 21
     Transparent = False
   end
 end
