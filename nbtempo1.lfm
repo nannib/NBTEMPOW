@@ -1,14 +1,14 @@
 object Form1: TForm1
-  Left = 165
+  Left = 379
   Height = 610
-  Top = 124
+  Top = 118
   Width = 1016
   HorzScrollBar.Page = 1006
   HorzScrollBar.Range = 1006
   VertScrollBar.Page = 554
   VertScrollBar.Range = 554
   Align = alTop
-  Caption = 'NBTempoW - V.1.1 by Nanni Bassetti'
+  Caption = 'NBTempoW - V.1.2 by Nanni Bassetti'
   ClientHeight = 610
   ClientWidth = 1016
   Color = clSilver

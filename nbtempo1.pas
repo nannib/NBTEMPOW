@@ -159,7 +159,7 @@ begin
      if (DateTimePicker1.DateIsNull) and (DateTimePicker2.DateIsNull) then
      begin
        d:='';
-       macd:='';
+       macd:='-d 0000-00-00';
        dcsv:='All';
      end
      else
@@ -179,7 +179,7 @@ begin
        z:=' -z '+LabeledEdit1.Text+' -s '+LabeledEdit2.Text+' ';
      end;
      //ProgressBar1.StepIt;
-       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe '+macd+' -b >'+Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv');
+       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe '+macd+' >'+Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv');
 
 
      Progressbar1.Visible:=False;
