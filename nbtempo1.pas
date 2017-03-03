@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, DateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ShellCtrls, ExtCtrls, ComCtrls, StdCtrls, EditBtn, Windows;
+  Dialogs, ExtCtrls, ComCtrls, StdCtrls, EditBtn, Windows;
 
 type
 
@@ -19,12 +19,11 @@ type
     Button4: TButton;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
-    Edit1: TEdit;
-    Edit2: TEdit;
+    DirectoryEdit1: TDirectoryEdit;
     Edit3: TEdit;
+    FileNameEdit1: TFileNameEdit;
     Label1: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -32,9 +31,6 @@ type
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     ProgressBar1: TProgressBar;
-    ShellListView1: TShellListView;
-    ShellTreeView1: TShellTreeView;
-    ShellTreeView2: TShellTreeView;
     Splitter1: TSplitter;
     Splitter2: TSplitter;
     StaticText1: TStaticText;
@@ -46,21 +42,13 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure DirectoryEdit1Change(Sender: TObject);
+    procedure Edit3Change(Sender: TObject);
+    procedure FileNameEdit1Change(Sender: TObject);
     procedure FormStartDock(Sender: TObject; var DragObject: TDragDockObject);
     procedure LabeledEdit1Change(Sender: TObject);
     procedure ProgressBar1ContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
-    procedure ShellListView1Change(Sender: TObject; Item: TListItem;
-      Change: TItemChange);
-    procedure ShellListView1Click(Sender: TObject);
-    procedure ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
-    procedure ShellTreeView1Click(Sender: TObject);
-    procedure ShellTreeView2Change(Sender: TObject; Node: TTreeNode);
-    procedure StaticText4Click(Sender: TObject);
-    procedure TimeEdit1Change(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
   private
     { private declarations }
   public
@@ -70,7 +58,7 @@ type
 var
   Form1: TForm1;
   selectedfile: string;
-  z,d1,d2,d,macd,dcsv,ctime: string;
+  z,d1,d2,d,macd,dcsv,ctime,fn,dn: string;
   ActualTime: TDateTime;
 
 
@@ -80,21 +68,7 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.ShellListView1Change(Sender: TObject; Item: TListItem;
-  Change: TItemChange);
-begin
 
-end;
-
-procedure TForm1.Edit1Change(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-
-end;
 
 procedure TForm1.FormStartDock(Sender: TObject; var DragObject: TDragDockObject
   );
@@ -179,12 +153,12 @@ begin
        z:=' -z '+LabeledEdit1.Text+' -s '+LabeledEdit2.Text+' ';
      end;
      //ProgressBar1.StepIt;
-       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+Edit1.Text+'| .\bin\mactime.exe '+macd+' >'+Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv');
+       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+fn+'| .\bin\mactime.exe '+macd+' >'+dn+'timeline'+dcsv+'_C'+ctime+'.csv');
 
 
      Progressbar1.Visible:=False;
      Label2.Visible:=False;
-     Edit3.Text:=Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv';
+     Edit3.Text:=dn+'timeline'+dcsv+'_C'+ctime+'.csv';
  end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -194,7 +168,7 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  ShellExecute(handle,'open',PChar(Edit2.Text+'timeline'+dcsv+'_C'+ctime+'.csv'),'','',1)
+  ShellExecute(handle,'open',PChar(dn+'timeline'+dcsv+'_C'+ctime+'.csv'),'','',1)
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
@@ -203,40 +177,22 @@ begin
   DateTimePicker2.Date:=1.7E308;
 end;
 
-procedure TForm1.ShellListView1Click(Sender: TObject);
+procedure TForm1.DirectoryEdit1Change(Sender: TObject);
 begin
-     Edit1.Text := ShellListView1.GetPathFromItem(ShellListView1.Selected);
+  dn:=DirectoryEdit1.Directory;
 end;
 
-procedure TForm1.ShellTreeView1Change(Sender: TObject; Node: TTreeNode);
-begin
-
-end;
-
-procedure TForm1.ShellTreeView1Click(Sender: TObject);
-begin
-  Edit3.Text:='';
-end;
-
-procedure TForm1.ShellTreeView2Change(Sender: TObject; Node: TTreeNode);
-begin
-     Edit2.Text := ShellTreeView2.Path;
-end;
-
-procedure TForm1.StaticText4Click(Sender: TObject);
+procedure TForm1.Edit3Change(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.TimeEdit1Change(Sender: TObject);
+procedure TForm1.FileNameEdit1Change(Sender: TObject);
 begin
-
+   Edit3.Text:='';
+   fn:=FileNameEdit1.Filename;
 end;
 
-procedure TForm1.Timer1Timer(Sender: TObject);
-begin
-
-end;
 
 end.
 

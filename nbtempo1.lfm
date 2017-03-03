@@ -1,16 +1,16 @@
 object Form1: TForm1
-  Left = 379
-  Height = 610
-  Top = 118
-  Width = 1016
+  Left = 274
+  Height = 429
+  Top = 145
+  Width = 863
   HorzScrollBar.Page = 1006
   HorzScrollBar.Range = 1006
   VertScrollBar.Page = 554
   VertScrollBar.Range = 554
   Align = alTop
-  Caption = 'NBTempoW - V.1.2 by Nanni Bassetti'
-  ClientHeight = 610
-  ClientWidth = 1016
+  Caption = 'NBTempoW - V. 2.0 by Nanni Bassetti'
+  ClientHeight = 429
+  ClientWidth = 863
   Color = clSilver
   Icon.Data = {
     D42C0200000001001B00000010000100040005360000B6010000404010000100
@@ -4469,42 +4469,37 @@ object Form1: TForm1
     E0070000C0030000800100008001000080010000800100000001000080010000
     8001000080010000C0030000E0070000F00F0000FE7F0000
   }
-  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.6.2.0'
-  object ShellTreeView1: TShellTreeView
-    Left = 16
-    Height = 304
-    Top = 56
-    Width = 209
-    FileSortType = fstNone
-    ReadOnly = True
-    RightClickSelect = True
-    TabOrder = 0
-    OnChange = ShellTreeView1Change
-    OnClick = ShellTreeView1Click
-    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
-    ObjectTypes = [otFolders, otHidden]
-    ShellListView = ShellListView1
-  end
-  object ShellListView1: TShellListView
-    Left = 232
-    Height = 302
-    Top = 56
-    Width = 443
-    Color = clDefault
-    ReadOnly = True
-    RowSelect = True
-    TabOrder = 1
-    OnClick = ShellListView1Click
-    ObjectTypes = [otNonFolders]
-    ShellTreeView = ShellTreeView1
-  end
   object DateTimePicker1: TDateTimePicker
-    Left = 682
+    Left = 520
     Height = 23
-    Top = 154
+    Top = 146
     Width = 107
+    ArrowShape = asModernLarger
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    AutoSize = False
+    TabOrder = 1
+    TrailingSeparator = False
+    TextForNullDate = 'Choose a date'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 1.7E308
+    Time = 1.7E308
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 744
+    Height = 23
+    Top = 144
+    Width = 104
     ArrowShape = asModernLarger
     CenturyFrom = 1941
     MaxDate = 2958465
@@ -4524,44 +4519,10 @@ object Form1: TForm1
     HideDateTimeParts = []
     MonthNames = 'Long'
   end
-  object DateTimePicker2: TDateTimePicker
-    Left = 888
-    Height = 23
-    Top = 152
-    Width = 104
-    ArrowShape = asModernLarger
-    CenturyFrom = 1941
-    MaxDate = 2958465
-    MinDate = -53780
-    AutoSize = False
-    TabOrder = 3
-    TrailingSeparator = False
-    TextForNullDate = 'Choose a date'
-    LeadingZeros = True
-    Kind = dtkDate
-    TimeFormat = tf24
-    TimeDisplay = tdHMS
-    DateMode = dmComboBox
-    Date = 1.7E308
-    Time = 1.7E308
-    UseDefaultSeparators = True
-    HideDateTimeParts = []
-    MonthNames = 'Long'
-  end
-  object Edit1: TEdit
-    Left = 682
-    Height = 23
-    Top = 56
-    Width = 311
-    OnChange = Edit1Change
-    ReadOnly = True
-    TabStop = False
-    TabOrder = 10
-  end
   object Button1: TButton
-    Left = 328
+    Left = 176
     Height = 37
-    Top = 504
+    Top = 288
     Width = 112
     Caption = 'TIMELINE!'
     Font.CharSet = ANSI_CHARSET
@@ -4571,77 +4532,56 @@ object Form1: TForm1
     Font.Quality = fqDraft
     OnClick = Button1Click
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 5
   end
   object LabeledEdit1: TLabeledEdit
-    Left = 680
+    Left = 520
     Height = 23
-    Top = 272
+    Top = 234
     Width = 209
     EditLabel.AnchorSideLeft.Control = LabeledEdit1
     EditLabel.AnchorSideRight.Control = LabeledEdit1
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = LabeledEdit1
-    EditLabel.Left = 680
+    EditLabel.Left = 520
     EditLabel.Height = 15
-    EditLabel.Top = 254
+    EditLabel.Top = 216
     EditLabel.Width = 209
     EditLabel.Caption = 'TIME ZONE (leave empty for local time)'
     EditLabel.Color = clYellow
     EditLabel.ParentColor = False
-    TabOrder = 4
+    TabOrder = 3
     OnChange = LabeledEdit1Change
   end
   object LabeledEdit2: TLabeledEdit
-    Left = 682
+    Left = 520
     Height = 23
-    Top = 335
+    Top = 290
     Width = 114
     EditLabel.AnchorSideLeft.Control = LabeledEdit2
     EditLabel.AnchorSideRight.Control = LabeledEdit2
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = LabeledEdit2
-    EditLabel.Left = 682
+    EditLabel.Left = 520
     EditLabel.Height = 15
-    EditLabel.Top = 317
+    EditLabel.Top = 272
     EditLabel.Width = 114
     EditLabel.Caption = 'TIME SKEW'
     EditLabel.Color = clYellow
     EditLabel.ParentColor = False
-    TabOrder = 5
+    TabOrder = 4
     Text = '0'
-  end
-  object Edit2: TEdit
-    Left = 248
-    Height = 23
-    Top = 384
-    Width = 311
-    OnChange = Edit1Change
-    ReadOnly = True
-    TabOrder = 11
   end
   object Splitter2: TSplitter
     Left = 0
-    Height = 610
+    Height = 554
     Top = 0
     Width = 4
   end
-  object ShellTreeView2: TShellTreeView
-    Left = 16
-    Height = 170
-    Top = 384
-    Width = 209
-    FileSortType = fstNone
-    ReadOnly = True
-    TabOrder = 6
-    OnChange = ShellTreeView2Change
-    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
-    ObjectTypes = [otFolders]
-  end
   object Button2: TButton
-    Left = 912
+    Left = 744
     Height = 64
-    Top = 488
+    Top = 352
     Width = 94
     Caption = 'EXIT'
     Color = clRed
@@ -4655,17 +4595,18 @@ object Form1: TForm1
     TabOrder = 9
   end
   object Edit3: TEdit
-    Left = 552
+    Left = 24
     Height = 23
-    Top = 432
+    Top = 360
     Width = 425
+    OnChange = Edit3Change
     ReadOnly = True
-    TabOrder = 13
+    TabOrder = 6
   end
   object Label1: TLabel
-    Left = 552
+    Left = 24
     Height = 15
-    Top = 413
+    Top = 336
     Width = 101
     Caption = 'FILE CSV CREATED:'
     Color = clYellow
@@ -4673,29 +4614,29 @@ object Form1: TForm1
     Transparent = False
   end
   object Button3: TButton
-    Left = 736
+    Left = 192
     Height = 25
-    Top = 463
+    Top = 391
     Width = 75
     Caption = 'open it!'
     OnClick = Button3Click
-    TabOrder = 8
+    TabOrder = 7
   end
   object ProgressBar1: TProgressBar
-    Left = 272
+    Left = 112
     Height = 26
-    Top = 463
+    Top = 232
     Width = 240
     OnContextPopup = ProgressBar1ContextPopup
     Style = pbstMarquee
-    TabOrder = 14
+    TabOrder = 10
     TabStop = True
     Visible = False
   end
   object Label2: TLabel
-    Left = 328
+    Left = 176
     Height = 15
-    Top = 432
+    Top = 192
     Width = 118
     Caption = 'Working....please wait!'
     Color = clYellow
@@ -4703,21 +4644,10 @@ object Form1: TForm1
     Transparent = False
     Visible = False
   end
-  object Label3: TLabel
-    Left = 24
-    Height = 15
-    Top = 34
-    Width = 90
-    Alignment = taCenter
-    Caption = 'Choose directory'
-    Color = clYellow
-    ParentColor = False
-    Transparent = False
-  end
   object Label4: TLabel
-    Left = 232
+    Left = 16
     Height = 15
-    Top = 34
+    Top = 40
     Width = 165
     Alignment = taCenter
     Caption = 'Choose image file (raw or EWF)'
@@ -4726,9 +4656,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label5: TLabel
-    Left = 682
+    Left = 520
     Height = 15
-    Top = 136
+    Top = 122
     Width = 28
     Caption = 'From'
     Color = clYellow
@@ -4736,9 +4666,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label6: TLabel
-    Left = 888
+    Left = 744
     Height = 15
-    Top = 136
+    Top = 122
     Width = 14
     Caption = 'To'
     Color = clYellow
@@ -4746,9 +4676,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label7: TLabel
-    Left = 24
+    Left = 16
     Height = 15
-    Top = 368
+    Top = 120
     Width = 129
     Caption = 'Choose output directory'
     Color = clYellow
@@ -4756,7 +4686,7 @@ object Form1: TForm1
     Transparent = False
   end
   object StaticText1: TStaticText
-    Left = 248
+    Left = 160
     Height = 29
     Top = 0
     Width = 546
@@ -4770,68 +4700,92 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     ParentColor = False
-    TabOrder = 15
+    TabOrder = 11
   end
   object Splitter1: TSplitter
     Left = 4
-    Height = 610
+    Height = 554
     Top = 0
     Width = 4
   end
   object StaticText2: TStaticText
-    Left = 896
+    Left = 744
     Height = 41
-    Top = 254
+    Top = 218
     Width = 88
     Caption = 'e.g.: GMT+2, UTC, CET etc.'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 18
+    TabOrder = 14
     Transparent = False
   end
   object StaticText3: TStaticText
-    Left = 801
+    Left = 744
     Height = 41
-    Top = 320
+    Top = 272
     Width = 88
     Caption = 'e.g.: in seconds, e.g.: 10,-5, etc.'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 19
+    TabOrder = 15
     Transparent = False
   end
   object Button4: TButton
-    Left = 800
+    Left = 648
     Height = 24
-    Top = 192
+    Top = 178
     Width = 84
     Caption = 'ALL DATES'
     OnClick = Button4Click
-    TabOrder = 20
+    TabOrder = 16
   end
   object StaticText4: TStaticText
-    Left = 814
+    Left = 664
     Height = 17
-    Top = 160
+    Top = 150
     Width = 48
     Alignment = taCenter
     Caption = 'OR'
     Color = clYellow
-    OnClick = StaticText4Click
     ParentColor = False
-    TabOrder = 17
+    TabOrder = 13
     Transparent = False
   end
   object StaticText5: TStaticText
-    Left = 682
+    Left = 520
     Height = 25
-    Top = 104
+    Top = 64
     Width = 312
     Alignment = taCenter
     Caption = 'By default, the range is set to ALL DATES'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 21
+    TabOrder = 17
     Transparent = False
+  end
+  object DirectoryEdit1: TDirectoryEdit
+    Left = 16
+    Height = 23
+    Top = 144
+    Width = 464
+    ShowHidden = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 0
+    OnChange = DirectoryEdit1Change
+  end
+  object FileNameEdit1: TFileNameEdit
+    Left = 16
+    Height = 23
+    Top = 64
+    Width = 464
+    FilterIndex = 0
+    HideDirectories = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 18
+    OnChange = FileNameEdit1Change
   end
 end
