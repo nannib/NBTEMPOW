@@ -153,12 +153,12 @@ begin
        z:=' -z '+LabeledEdit1.Text+' -s '+LabeledEdit2.Text+' ';
      end;
      //ProgressBar1.StepIt;
-       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+fn+'| .\bin\mactime.exe '+macd+' >'+dn+'timeline'+dcsv+'_C'+ctime+'.csv');
+       ExecuteAndWait('cmd /c .\bin\tsk_gettimes.exe '+z+fn+'| .\bin\mactime.exe '+macd+' >'+dn+'\timeline'+dcsv+'_C'+ctime+'.csv');
 
 
      Progressbar1.Visible:=False;
      Label2.Visible:=False;
-     Edit3.Text:=dn+'timeline'+dcsv+'_C'+ctime+'.csv';
+     Edit3.Text:=dn+'\timeline'+dcsv+'_C'+ctime+'.csv';
  end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -168,7 +168,7 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  ShellExecute(handle,'open',PChar(dn+'timeline'+dcsv+'_C'+ctime+'.csv'),'','',1)
+  ShellExecute(handle,'open',PChar(dn+'\timeline'+dcsv+'_C'+ctime+'.csv'),'','',1)
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
