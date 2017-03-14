@@ -8,7 +8,7 @@ object Form1: TForm1
   VertScrollBar.Page = 554
   VertScrollBar.Range = 554
   Align = alTop
-  Caption = 'NBTempoW - V. 2.0 by Nanni Bassetti'
+  Caption = 'NBTempoW - V. 2.1 by Nanni Bassetti'
   ClientHeight = 429
   ClientWidth = 863
   Color = clSilver
@@ -4532,26 +4532,7 @@ object Form1: TForm1
     Font.Quality = fqDraft
     OnClick = Button1Click
     ParentFont = False
-    TabOrder = 5
-  end
-  object LabeledEdit1: TLabeledEdit
-    Left = 520
-    Height = 23
-    Top = 234
-    Width = 209
-    EditLabel.AnchorSideLeft.Control = LabeledEdit1
-    EditLabel.AnchorSideRight.Control = LabeledEdit1
-    EditLabel.AnchorSideRight.Side = asrBottom
-    EditLabel.AnchorSideBottom.Control = LabeledEdit1
-    EditLabel.Left = 520
-    EditLabel.Height = 15
-    EditLabel.Top = 216
-    EditLabel.Width = 209
-    EditLabel.Caption = 'TIME ZONE (leave empty for local time)'
-    EditLabel.Color = clYellow
-    EditLabel.ParentColor = False
-    TabOrder = 3
-    OnChange = LabeledEdit1Change
+    TabOrder = 4
   end
   object LabeledEdit2: TLabeledEdit
     Left = 520
@@ -4569,7 +4550,7 @@ object Form1: TForm1
     EditLabel.Caption = 'TIME SKEW'
     EditLabel.Color = clYellow
     EditLabel.ParentColor = False
-    TabOrder = 4
+    TabOrder = 3
     Text = '0'
   end
   object Splitter2: TSplitter
@@ -4592,7 +4573,7 @@ object Form1: TForm1
     Font.Quality = fqDraft
     OnClick = Button2Click
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
   end
   object Edit3: TEdit
     Left = 24
@@ -4601,7 +4582,7 @@ object Form1: TForm1
     Width = 425
     OnChange = Edit3Change
     ReadOnly = True
-    TabOrder = 6
+    TabOrder = 5
   end
   object Label1: TLabel
     Left = 24
@@ -4620,7 +4601,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'open it!'
     OnClick = Button3Click
-    TabOrder = 7
+    TabOrder = 6
   end
   object ProgressBar1: TProgressBar
     Left = 112
@@ -4629,7 +4610,7 @@ object Form1: TForm1
     Width = 240
     OnContextPopup = ProgressBar1ContextPopup
     Style = pbstMarquee
-    TabOrder = 10
+    TabOrder = 9
     TabStop = True
     Visible = False
   end
@@ -4700,7 +4681,7 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     ParentColor = False
-    TabOrder = 11
+    TabOrder = 10
   end
   object Splitter1: TSplitter
     Left = 4
@@ -4708,26 +4689,16 @@ object Form1: TForm1
     Top = 0
     Width = 4
   end
-  object StaticText2: TStaticText
-    Left = 744
-    Height = 41
-    Top = 218
-    Width = 88
-    Caption = 'e.g.: GMT+2, UTC, CET etc.'
-    Color = clMoneyGreen
-    ParentColor = False
-    TabOrder = 14
-    Transparent = False
-  end
   object StaticText3: TStaticText
     Left = 744
     Height = 41
     Top = 272
     Width = 88
-    Caption = 'e.g.: in seconds, e.g.: 10,-5, etc.'
+    Caption = 'in seconds, e.g.: 10 or -5, etc.'
     Color = clMoneyGreen
+    OnClick = StaticText3Click
     ParentColor = False
-    TabOrder = 15
+    TabOrder = 13
     Transparent = False
   end
   object Button4: TButton
@@ -4737,7 +4708,7 @@ object Form1: TForm1
     Width = 84
     Caption = 'ALL DATES'
     OnClick = Button4Click
-    TabOrder = 16
+    TabOrder = 14
   end
   object StaticText4: TStaticText
     Left = 664
@@ -4748,7 +4719,7 @@ object Form1: TForm1
     Caption = 'OR'
     Color = clYellow
     ParentColor = False
-    TabOrder = 13
+    TabOrder = 12
     Transparent = False
   end
   object StaticText5: TStaticText
@@ -4760,7 +4731,7 @@ object Form1: TForm1
     Caption = 'By default, the range is set to ALL DATES'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 17
+    TabOrder = 15
     Transparent = False
   end
   object DirectoryEdit1: TDirectoryEdit
@@ -4785,7 +4756,39 @@ object Form1: TForm1
     ButtonWidth = 23
     NumGlyphs = 1
     MaxLength = 0
-    TabOrder = 18
+    TabOrder = 16
     OnChange = FileNameEdit1Change
+  end
+  object StaticText6: TStaticText
+    Left = 674
+    Height = 17
+    Top = 226
+    Width = 32
+    Alignment = taCenter
+    Caption = 'OR'
+    Color = clYellow
+    ParentColor = False
+    TabOrder = 17
+    Transparent = False
+  end
+  object CheckBox1: TCheckBox
+    Left = 752
+    Height = 19
+    Top = 224
+    Width = 79
+    Caption = 'ZULU Time'
+    OnChange = CheckBox1Change
+    TabOrder = 18
+  end
+  object CheckBox2: TCheckBox
+    Left = 556
+    Height = 19
+    Top = 224
+    Width = 78
+    Caption = 'Local Time'
+    Checked = True
+    OnChange = CheckBox2Change
+    State = cbChecked
+    TabOrder = 19
   end
 end
