@@ -4481,7 +4481,7 @@ object Form1: TForm1
     MaxDate = 2958465
     MinDate = -53780
     AutoSize = False
-    TabOrder = 1
+    TabOrder = 2
     TrailingSeparator = False
     TextForNullDate = 'Choose a date'
     LeadingZeros = True
@@ -4505,7 +4505,7 @@ object Form1: TForm1
     MaxDate = 2958465
     MinDate = -53780
     AutoSize = False
-    TabOrder = 2
+    TabOrder = 3
     TrailingSeparator = False
     TextForNullDate = 'Choose a date'
     LeadingZeros = True
@@ -4532,7 +4532,7 @@ object Form1: TForm1
     Font.Quality = fqDraft
     OnClick = Button1Click
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 8
   end
   object LabeledEdit2: TLabeledEdit
     Left = 520
@@ -4550,7 +4550,7 @@ object Form1: TForm1
     EditLabel.Caption = 'TIME SKEW'
     EditLabel.Color = clYellow
     EditLabel.ParentColor = False
-    TabOrder = 3
+    TabOrder = 7
     Text = '0'
   end
   object Splitter2: TSplitter
@@ -4573,7 +4573,7 @@ object Form1: TForm1
     Font.Quality = fqDraft
     OnClick = Button2Click
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 11
   end
   object Edit3: TEdit
     Left = 24
@@ -4582,7 +4582,7 @@ object Form1: TForm1
     Width = 425
     OnChange = Edit3Change
     ReadOnly = True
-    TabOrder = 5
+    TabOrder = 9
   end
   object Label1: TLabel
     Left = 24
@@ -4601,7 +4601,7 @@ object Form1: TForm1
     Width = 75
     Caption = 'open it!'
     OnClick = Button3Click
-    TabOrder = 6
+    TabOrder = 10
   end
   object ProgressBar1: TProgressBar
     Left = 112
@@ -4610,7 +4610,7 @@ object Form1: TForm1
     Width = 240
     OnContextPopup = ProgressBar1ContextPopup
     Style = pbstMarquee
-    TabOrder = 9
+    TabOrder = 13
     TabStop = True
     Visible = False
   end
@@ -4681,7 +4681,7 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     ParentColor = False
-    TabOrder = 10
+    TabOrder = 14
   end
   object Splitter1: TSplitter
     Left = 4
@@ -4698,7 +4698,7 @@ object Form1: TForm1
     Color = clMoneyGreen
     OnClick = StaticText3Click
     ParentColor = False
-    TabOrder = 13
+    TabOrder = 17
     Transparent = False
   end
   object Button4: TButton
@@ -4708,7 +4708,7 @@ object Form1: TForm1
     Width = 84
     Caption = 'ALL DATES'
     OnClick = Button4Click
-    TabOrder = 14
+    TabOrder = 4
   end
   object StaticText4: TStaticText
     Left = 664
@@ -4719,7 +4719,7 @@ object Form1: TForm1
     Caption = 'OR'
     Color = clYellow
     ParentColor = False
-    TabOrder = 12
+    TabOrder = 16
     Transparent = False
   end
   object StaticText5: TStaticText
@@ -4731,7 +4731,7 @@ object Form1: TForm1
     Caption = 'By default, the range is set to ALL DATES'
     Color = clMoneyGreen
     ParentColor = False
-    TabOrder = 15
+    TabOrder = 18
     Transparent = False
   end
   object DirectoryEdit1: TDirectoryEdit
@@ -4743,7 +4743,7 @@ object Form1: TForm1
     ButtonWidth = 23
     NumGlyphs = 1
     MaxLength = 0
-    TabOrder = 0
+    TabOrder = 1
     OnChange = DirectoryEdit1Change
   end
   object FileNameEdit1: TFileNameEdit
@@ -4756,7 +4756,7 @@ object Form1: TForm1
     ButtonWidth = 23
     NumGlyphs = 1
     MaxLength = 0
-    TabOrder = 16
+    TabOrder = 0
     OnChange = FileNameEdit1Change
   end
   object StaticText6: TStaticText
@@ -4768,7 +4768,7 @@ object Form1: TForm1
     Caption = 'OR'
     Color = clYellow
     ParentColor = False
-    TabOrder = 17
+    TabOrder = 19
     Transparent = False
   end
   object CheckBox1: TCheckBox
@@ -4778,7 +4778,7 @@ object Form1: TForm1
     Width = 79
     Caption = 'ZULU Time'
     OnChange = CheckBox1Change
-    TabOrder = 18
+    TabOrder = 6
   end
   object CheckBox2: TCheckBox
     Left = 556
@@ -4789,6 +4789,6 @@ object Form1: TForm1
     Checked = True
     OnChange = CheckBox2Change
     State = cbChecked
-    TabOrder = 19
+    TabOrder = 5
   end
 end
