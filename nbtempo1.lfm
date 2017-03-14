@@ -4472,9 +4472,9 @@ object Form1: TForm1
   Position = poScreenCenter
   LCLVersion = '1.6.2.0'
   object DateTimePicker1: TDateTimePicker
-    Left = 520
+    Left = 536
     Height = 23
-    Top = 146
+    Top = 128
     Width = 107
     ArrowShape = asModernLarger
     CenturyFrom = 1941
@@ -4496,9 +4496,9 @@ object Form1: TForm1
     MonthNames = 'Long'
   end
   object DateTimePicker2: TDateTimePicker
-    Left = 744
+    Left = 727
     Height = 23
-    Top = 144
+    Top = 128
     Width = 104
     ArrowShape = asModernLarger
     CenturyFrom = 1941
@@ -4535,7 +4535,7 @@ object Form1: TForm1
     TabOrder = 8
   end
   object LabeledEdit2: TLabeledEdit
-    Left = 520
+    Left = 536
     Height = 23
     Top = 290
     Width = 114
@@ -4543,7 +4543,7 @@ object Form1: TForm1
     EditLabel.AnchorSideRight.Control = LabeledEdit2
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = LabeledEdit2
-    EditLabel.Left = 520
+    EditLabel.Left = 536
     EditLabel.Height = 15
     EditLabel.Top = 272
     EditLabel.Width = 114
@@ -4582,7 +4582,7 @@ object Form1: TForm1
     Width = 425
     OnChange = Edit3Change
     ReadOnly = True
-    TabOrder = 9
+    TabOrder = 13
   end
   object Label1: TLabel
     Left = 24
@@ -4610,7 +4610,7 @@ object Form1: TForm1
     Width = 240
     OnContextPopup = ProgressBar1ContextPopup
     Style = pbstMarquee
-    TabOrder = 13
+    TabOrder = 9
     TabStop = True
     Visible = False
   end
@@ -4637,9 +4637,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label5: TLabel
-    Left = 520
+    Left = 536
     Height = 15
-    Top = 122
+    Top = 104
     Width = 28
     Caption = 'From'
     Color = clYellow
@@ -4647,9 +4647,9 @@ object Form1: TForm1
     Transparent = False
   end
   object Label6: TLabel
-    Left = 744
+    Left = 728
     Height = 15
-    Top = 122
+    Top = 106
     Width = 14
     Caption = 'To'
     Color = clYellow
@@ -4702,18 +4702,18 @@ object Form1: TForm1
     Transparent = False
   end
   object Button4: TButton
-    Left = 648
+    Left = 640
     Height = 24
-    Top = 178
+    Top = 184
     Width = 84
     Caption = 'ALL DATES'
     OnClick = Button4Click
     TabOrder = 4
   end
   object StaticText4: TStaticText
-    Left = 664
+    Left = 658
     Height = 17
-    Top = 150
+    Top = 160
     Width = 48
     Alignment = taCenter
     Caption = 'OR'
@@ -4760,10 +4760,10 @@ object Form1: TForm1
     OnChange = FileNameEdit1Change
   end
   object StaticText6: TStaticText
-    Left = 674
+    Left = 658
     Height = 17
     Top = 226
-    Width = 32
+    Width = 48
     Alignment = taCenter
     Caption = 'OR'
     Color = clYellow
